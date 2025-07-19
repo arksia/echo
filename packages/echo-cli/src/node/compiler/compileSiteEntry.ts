@@ -5,7 +5,7 @@ import { cwd } from 'node:process'
 const CWD = cwd()
 const SITE_ENTRY_PATH = resolve(CWD, '.echo/site-entry.ts')
 
-// 确保 .echo 目录存在
+// create .echo directory if it doesn't exist
 const dir = resolve(CWD, '.echo')
 if (!existsSync(dir)) {
   mkdirSync(dir, { recursive: true })

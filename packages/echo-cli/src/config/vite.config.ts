@@ -1,9 +1,10 @@
 import { resolve } from 'node:path'
+import process from 'node:process'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 
 export function getDevConfig() {
-  const projectRoot = require('node:process').cwd()
+  const projectRoot = process.cwd()
   const echoDir = resolve(projectRoot, '.echo')
   console.log('projectRoot', projectRoot)
   console.log('echoDir', echoDir)

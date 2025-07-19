@@ -1,8 +1,8 @@
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { writeFileSync, existsSync } from 'node:fs'
-import { mkdirSync } from 'node:fs'
+import { cwd } from 'node:process'
 
-const CWD = process.cwd()
+const CWD = cwd()
 const SITE_ENTRY_PATH = resolve(CWD, '.echo/site-entry.ts')
 
 // 确保 .echo 目录存在
@@ -23,4 +23,4 @@ createApp(App).mount('#app')
   if (!existsSync(SITE_ENTRY_PATH)) {
     writeFileSync(SITE_ENTRY_PATH, entryContent.trim())
   }
-} 
+}

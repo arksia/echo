@@ -1,6 +1,6 @@
+import { existsSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { writeFileSync, existsSync } from 'node:fs'
-import { mkdirSync } from 'node:fs'
+import process from 'node:process'
 
 const CWD = process.cwd()
 const APP_PATH = resolve(CWD, '.echo/App.vue')
@@ -88,4 +88,4 @@ h3 {
   if (!existsSync(APP_PATH)) {
     writeFileSync(APP_PATH, appContent.trim())
   }
-} 
+}

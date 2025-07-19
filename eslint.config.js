@@ -1,6 +1,10 @@
 import defineConfig from '@antfu/eslint-config'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 export default defineConfig({
+  typescript: true,
+  vue: true,
+  eslintPluginPrettierRecommended,
   ignores: [
     'node_modules',
     'dist',

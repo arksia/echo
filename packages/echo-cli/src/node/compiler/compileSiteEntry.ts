@@ -1,0 +1,26 @@
+import { resolve } from 'node:path'
+import { writeFileSync, existsSync } from 'node:fs'
+import { mkdirSync } from 'node:fs'
+
+const CWD = process.cwd()
+const SITE_ENTRY_PATH = resolve(CWD, '.echo/site-entry.ts')
+
+// 确保 .echo 目录存在
+const dir = resolve(CWD, '.echo')
+if (!existsSync(dir)) {
+  mkdirSync(dir, { recursive: true })
+}
+
+export async function buildSiteEntry() {
+  const entryContent = `
+import { createApp } from 'vue'
+import App from './App.vue'
+import './style.css'
+
+createApp(App).mount('#app')
+`
+
+  if (!existsSync(SITE_ENTRY_PATH)) {
+    writeFileSync(SITE_ENTRY_PATH, entryContent.trim())
+  }
+} 

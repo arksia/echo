@@ -1,0 +1,38 @@
+{
+  "name": "echo-cli",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Echo Dev CLI",
+  "author": "arkwq",
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "echo",
+    "development"
+  ],
+  "bin": {
+    "echo-cli": "./lib/node/bin.js"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "build:cli": "tsc -p tsconfig.cli.json",
+    "prepublishOnly": "pnpm build:cli"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "commander": "^14.0.0",
+    "fs-extra": "catalog:",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "catalog:",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/tsconfig": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}
